@@ -1,7 +1,6 @@
 
 package mainbank;
 
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -27,8 +26,7 @@ public class OnlineBank {
                        System.out.println("Continue"); 
                         
 		}else if (Password.contains("q") || Password.contains("Q")) {break; }
-                else{System.out.print("WRONG PASSWORD, PLEASE TRY AGAIN! \n");
-                }
+                else{System.out.print("WRONG PASSWORD, PLEASE TRY AGAIN! \n");                }
 	} 
             return GMV;
     }
@@ -42,14 +40,13 @@ public class OnlineBank {
          + " \n2-Sign Up ");
         String choice = user.nextLine();
         
-        
          if(choice.equals("1")) {
             boolean pininsystem = Account(customer);              
 		if(pininsystem==true){
 			Transaction(customer, acc);
 		} 
 		
-                
+        
          }
          if (choice.equals("2")) {
                 System.out.println("First Name and Last Name:");
