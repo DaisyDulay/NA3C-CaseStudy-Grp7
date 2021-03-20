@@ -69,5 +69,89 @@ public class OnlineBank {
                 System.out.println("\n-----------------------------------------------");
                 Login(customer, acc);           
        }
+
        }
         
+
+	 //Daisy Joy Dulay "Method 5"
+        public static void Login(Customer customer, Account acc){
+            
+         Scanner user = new Scanner(System.in);
+        System.out.println("\nPlease choose an action");
+            System.out.println("1 - Sign in ,2 - Quit ");
+            System.out.println("Enter the you number choose:");
+            int log  = user.nextInt();
+        switch (log) {
+        
+            case 1:
+                System.out.println("\n Welcome "+ customer.pName+" please enter your password bellow!!!");
+            boolean pininsystem = Account(customer);               
+		if(pininsystem==true){
+			Transaction(customer, acc);
+		}
+                       
+            case 2:
+                break;
+        
+        }
+        }
+       
+        
+        //Daisy Joy Dulay "Method 6"
+	public static void Transaction(Customer customer, Account acc) {
+            
+             Scanner user = new Scanner(System.in);
+        System.out.println("\nAccount Name Holder: " + customer.pName);
+        System.out.println("------------------------------------");   
+            System.out.println("\nPlease choose an action");
+            System.out.println("1 - Show Balance ,2 - Show User Profile , 3 - Pay Bills");
+            System.out.println("Enter the you number choose:");
+            int userChoice  = user.nextInt();
+            System.out.println("");
+            
+            switch (userChoice) {
+                case 1:
+                    System.out.println("\nAccount Name Holder: " + customer.pName);
+                    System.out.println("YOUR CURRENT BALANCE IS " + acc.balance);
+                    System.out.println("\n----------------------------------------");
+                    System.out.println("Thank you for banking with us!");
+                    break;
+                case 2:
+                    System.out.println("\nUser Profiles");
+                    System.out.println("Name:"+ customer.pName);
+                    System.out.println("Address:"+ customer.Address);
+                    System.out.println("Contact Number:"+ customer.ContactNum);
+                    System.out.println("Account Number:"+customer.AccountNum);
+                    System.out.println("\n----------------------------------------");
+                    System.out.println("Thank you for banking with us!");
+                    break;
+                case 3:
+                    while(userChoice==3){
+                    System.out.println("Enter the amount:");
+                    double payAmount = user.nextDouble();
+                    
+                    if (payAmount > acc.balance) {
+                       System.out.println("\nINSUFFICIENT BALANCE, PLEASE TRY AGAIN!");
+                      
+                    } else{ acc.balance -= payAmount; SendTo(customer, acc); break;}     
+                    }  
+            }
+        }
+        
+        
+        //Daisy Joy Dulay "Method 7"
+        public static void SendTo(Customer customer, Account acc) {
+             Scanner user = new Scanner(System.in);
+            
+            System.out.println("\nChoose where we send the Reciept ");
+                    System.out.println(" 1- send to Email account \n "
+                    +"2-send to contact No.");
+                    System.out.println("Enter the number you choose:"); 
+                   String Sendto =user.nextLine();
+                if(Sendto.equals("1")){
+                                Email(customer, acc);
+                
+                }if(Sendto.equals("2")){
+                    SendToContactNumber(customer, acc);
+                }
+         }
