@@ -152,3 +152,46 @@ public class OnlineBank {
                     SendToContactNumber(customer, acc);
                 }
          }
+//Iris Phoebe Dizon "Method 8"
+        public static void Email(Customer customer, Account acc) {
+            Scanner user = new Scanner(System.in);
+            System.out.println("\nPlease enter your email:");
+            String Mail =user.nextLine();
+            
+            System.out.println("\nThe Reciept will send to your email:"+ Mail);
+            SendToEmail(customer, acc);
+        }
+        
+        //Iris Phoebe Dizon "Method 9"
+        public static void SendToEmail(Customer customer, Account acc) {
+                        System.out.println("\n\t\tReciept ");
+                        System.out.println("----------------------------------------");
+                        System.out.println("\nSan Isidro Branch, Tarlac City, Tarlac");
+                            DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+                                Date dateobj = new Date();
+                                Calendar calobj = Calendar.getInstance();           /*Get Current Date*/
+                        System.out.println(df.format(calobj.getTime()));
+                        System.out.println("PAYMENT IS SUCCESSFUL");
+                        System.out.println("Account Number: "+customer.AccountNum);  /*Get account Number*/
+                        System.out.println("Available balance: " + acc.balance);     /*Get the balance left*/ 
+                        System.out.println("\n----------------------------------------");
+                          System.out.println("Thank you for banking with us!");
+                    }
+        //Iris Phoebe Dizon "Method 10"
+        public static void SendToContactNumber(Customer customer, Account acc) {
+                        System.out.println("The Reciept will send to your Contact No.:"+ customer.ContactNum);  /*Get contact Number*/
+                        System.out.println("\n\t\tReciept ");
+                        System.out.println("--------------------------------------");
+                        System.out.println("\nSan Isidro Branch, Tarlac City, Tarlac");
+                            DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+                                Date dateobj = new Date();
+                                Calendar calobj = Calendar.getInstance();       /*Get Cuurrent date*/
+                        System.out.println(df.format(calobj.getTime()));
+                        System.out.println("PAYMENT IS SUCCESSFUL");
+                        System.out.println("Account Number: "+customer.AccountNum);             /*Get account Number*/
+                        System.out.println("Available balance: " + acc.balance);                /*Get the balance left*/
+                        System.out.println("\n----------------------------------------");
+                          System.out.println("Thank you for banking with us!");
+            
+                    }
+}
