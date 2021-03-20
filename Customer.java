@@ -1,13 +1,12 @@
-
+﻿
 package mainbank;
 public class Customer extends Person{
         static     String Address ;
         static     String ContactNum;
         static     String AccountNum;
         static     String password;
-        static     String choice ;
-    
-        
+        static     String choice ;   
+      
         //Gerrymee Tañedo "Method 11"  
  
             public Customer(String spName){
@@ -33,6 +32,18 @@ public class Customer extends Person{
             }public String password(){
             return password;
             }     
+
+
+ //Ellajane Manlapaz "Method 14"
+            void AccNum (String AccountNum ){
+            this.AccountNum=AccountNum;
+            }public String AccNum(){
+            return AccountNum;
+            }
+
+
+
+
 }
       
 
